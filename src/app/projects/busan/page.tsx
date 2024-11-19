@@ -1,4 +1,4 @@
-import Gallery from "@/app/components/Gallery";
+import Gallery from "@/app/components/gallery/Gallery";
 import Title from "@/app/components/Title";
 
 export default function BusanGalleryPage() {

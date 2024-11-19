@@ -1,4 +1,4 @@
-import Gallery from "../components/Gallery";
+import Gallery from "../components/gallery/Gallery";
 import Title from "../components/Title";
 
 export default function StreetPage() {
