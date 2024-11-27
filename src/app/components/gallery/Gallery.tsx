@@ -27,7 +27,7 @@ async function Gallery({ term = "featured" }: { term?: string }) {
 
   return (
     <section
-      className='columns-1 sm:columns-2 md:columns-3 lg:columns-4 2xl:columns-5 gap-2 '
+      className='columns-1 sm:columns-2 md:columns-3 lg:columns-4 2xl:columns-5 gap-2 mb-3'
       id='gallery'>
       <GalleryWrapper imageList={imageList} />
     </section>

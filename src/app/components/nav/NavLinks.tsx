@@ -11,7 +11,7 @@ function NavLinks() {
           <Link
             key={label}
             href={href}
-            className='uppercase p-3 tracking-wide underline-animation hover-link hover:drop-shadow-sm dark:text-glow dark:hover:text-glow-yellow select-none'>
+            className='uppercase p-3 tracking-wide underline-animation hover-link hover-glow-link select-none'>
             {label}
           </Link>
         );

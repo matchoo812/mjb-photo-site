@@ -3,17 +3,22 @@
 @tailwind utilities;
 
 :root {
-  --overlay: hsla(0, 0%, 75%, 0.75);
+  --overlay: hsla(0, 0%, 50%, 0.5);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --overlay: hsla(0, 0%, 0%, 0.8);
+    --overlay: hsla(0, 0%, 0%, 0.3);
   }
 }
 
 body {
   font-family: var(--font-oswald);
+}
+
+p {
+  line-height: 1.3;
+  letter-spacing: 1px;
 }
 
 @layer utilities {
@@ -49,19 +54,22 @@ body {
   .bg-overlay {
     background-color: var(--overlay);
   }
+
+  .border-overlay {
+    border-color: var(--overlay);
+  }
 }
 
 @layer components {
   .underline-animation {
     @apply relative;
   }
-
   .underline-animation::after {
-    @apply absolute left-0 bottom-0 content-[''] w-full h-[3px] rounded-sm bg-foreground scale-x-0 hover:-scale-x-50 hover:shadow-md dark:hover:glow-yellow transition-transform duration-300;
+    @apply absolute left-0 bottom-0 content-[''] w-full h-[3px] rounded-sm bg-foreground scale-x-0 hover:-scale-x-50 transition-transform duration-300;
   }
 
-  .hover-link {
-    @apply group-hover:opacity-50 hover:!opacity-100 transition-opacity duration-300;
+  .group-hover-link {
+    @apply group-hover:opacity-50 hover:!opacity-100 transition-opacity duration-200;
   }
 
   .slider-btn {
@@ -69,11 +77,31 @@ body {
   }
 
   .slider-modal-bg {
-    @apply fixed top-0 left-0 w-screen h-screen bg-overlay mx-auto z-10;
+    @apply fixed top-0 left-0 w-screen h-screen bg-overlay mx-auto z-10 overflow-hidden duration-300;
   }
 
   .image-slide {
     @apply absolute h-screen w-full object-contain;
+  }
+
+  .image-slide img {
+    @apply max-h-[90vh] w-auto max-w-[90vw] p-5 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 backdrop-blur-md border-overlay border-2 shadow-xl object-cover dark:glow;
+  }
+
+  .expand-img-btn {
+    @apply absolute h-full w-full top-0 left-0 backdrop-blur-sm opacity-0 group-hover:opacity-100 hover:glow duration-500;
+  }
+
+  .expand-img-btn > svg {
+    @apply h-full w-full p-10 scale-0 fill-background group-hover:scale-100 duration-500 drop-shadow-glowYellow dark:drop-shadow-glow;
+  }
+
+  .hover-glow-link {
+    @apply hover:drop-shadow-md dark:drop-shadow-glow dark:hover:drop-shadow-glowYellow duration-200;
+  }
+
+  .social-link {
+    @apply h-[1.6rem] w-[1.6rem] hover:-translate-y-[2px];
   }
 }
 

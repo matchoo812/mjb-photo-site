@@ -56,6 +56,10 @@ const config: Config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      dropShadow: {
+        glow: ["0px 1px 4px #00bbbb", "0px 1px 12px #00bbbb"],
+        glowYellow: ["0px 1px 4px #efeca9", "0px 1px 12px #efeca9"],
+      },
     },
     gridTemplateColumns: {
       gallery: "repeat(auto-fit, minmax(250px, 1fr))",

@@ -9,6 +9,7 @@ import ImageSlider from "./ImageSlider";
 // import ImageContainer from "./ImageContainer";
 import Image from "next/image";
 import { RiFullscreenLine } from "react-icons/ri";
+import { GiExpand } from "react-icons/gi";
 
 export default function GalleryWrapper({
   imageList,
@@ -49,10 +50,8 @@ export default function GalleryWrapper({
             <div className='grid place-content-center'>
               <figure className='relative bg-slate-50 border border-slate-300 shadow-md mt-2 group'>
                 <Image src={src} alt={title} height={height} width={width} />
-                <button
-                  data-index={index}
-                  className='absolute h-full w-full top-0 left-0  backdrop-blur-sm opacity-0 group-hover:opacity-100 duration-300'>
-                  <RiFullscreenLine className='h-full w-full p-10 scale-0 group-hover:scale-100 glow duration-500' />
+                <button data-index={index} className='expand-img-btn'>
+                  <GiExpand />
                 </button>
               </figure>
             </div>

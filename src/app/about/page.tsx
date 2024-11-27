@@ -1,5 +1,7 @@
 import env from "@/utils/env";
 import { fetchProfileImage } from "@/utils/fetchImages";
+import { SiNextdotjs, SiGithub, SiTypescript, SiTailwindcss } from "react-icons/si";
+import { TfiFlickr } from "react-icons/tfi";
 // import Image from "next/image";
 
 async function AboutPage() {
@@ -13,13 +15,13 @@ async function AboutPage() {
         style={{ backgroundImage: `url(${src})`, width: width, height: height }}
         className='m-4 border border-foreground dark:border-background object-cover bg-center shadow-lg dark:glow-yellow'></div>
 
-      <div className='p-5 m-4 max-w-[36rem] leading-6 tracking-wide'>
-        <p>I&apos;m Matt, a freelance photographer and web developer.</p>
+      <div className='p-5 m-4 max-w-[36rem]'>
+        <h2 className='text-2xl uppercase dark:text-glow-yellow mb-5 p-2 w-max'>
+          About Me
+        </h2>
+        <p>I&apos;m Matt, a freelance photographer and self-taught web developer.</p>
         <br />
-        <p>
-          My photographic interests range far and wide, but most of what I do is
-          primarily outdoors and street photography.
-        </p>
+        <p>Most of what I do is outdoors and street photography.</p>
       </div>
     </section>
   );
