@@ -22,7 +22,24 @@ body {
   }
 
   .glow {
-    box-shadow: 1px 2px 6px #50fcfe, 1px 2px 19px #50fcfe;
+    box-shadow: 1px 2px 6px #00bbbb, 1px 2px 20px #00bbbb;
+  }
+  .text-glow {
+    text-shadow: 0px 1px 4px #00bbbb, 0px 1px 12px #00bbbb;
+  }
+
+  .glow-pink {
+    box-shadow: 1px 2px 6px #ff76d8, 1px 2px 20px #ff76d8;
+  }
+  .text-glow-pink {
+    text-shadow: 0px 1px 4px #ff76d8, 0px 1px 12px #ff76d8;
+  }
+
+  .glow-yellow {
+    box-shadow: 1px 2px 6px #efeca9, 1px 2px 20px #efeca9;
+  }
+  .text-glow-yellow {
+    text-shadow: 0px 1px 4px #efeca9, 0px 1px 12px #efeca9;
   }
 
   .font-lora {
@@ -40,11 +57,23 @@ body {
   }
 
   .underline-animation::after {
-    @apply absolute left-0 bottom-0 content-[''] w-full h-[3px] rounded-sm bg-foreground scale-x-0 hover:-scale-x-50 transition-transform duration-300;
+    @apply absolute left-0 bottom-0 content-[''] w-full h-[3px] rounded-sm bg-foreground scale-x-0 hover:-scale-x-50 hover:shadow-md dark:hover:glow-yellow transition-transform duration-300;
   }
 
   .hover-link {
     @apply group-hover:opacity-50 hover:!opacity-100 transition-opacity duration-300;
+  }
+
+  .slider-btn {
+    @apply h-full duration-300 z-20 hover:shadow-lg focus-visible:shadow-lg hover:backdrop-blur-sm focus-visible:backdrop-blur-sm focus:outline-none;
+  }
+
+  .slider-modal-bg {
+    @apply fixed top-0 left-0 w-screen h-screen bg-overlay mx-auto z-10;
+  }
+
+  .image-slide {
+    @apply absolute h-screen w-full object-contain;
   }
 }
 

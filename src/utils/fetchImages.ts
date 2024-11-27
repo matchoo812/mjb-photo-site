@@ -56,3 +56,18 @@ export async function fetchImageList(url: string): Promise<PhotoWithInfo[]> {
     if (err instanceof Error) console.log(err.stack);
   }
 }
+
+export async function fetchProfileImage(id: string) {
+  try {
+    const res = await fetch(
+      `https://www.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=${env.FLICKR_API_KEY}&photo_id=${id}&format=json&nojsoncallback=1`
+    );
+    if (!res.ok) throw new Error("There was a problem fetching image sizes");
+
+    const imageSizes = await res.json();
+    const profileImage = imageSizes.sizes.size[6];
+    return profileImage;
+  } catch (err) {
+    if (err instanceof Error) console.log(err.stack);
+  }
+}

@@ -4,7 +4,7 @@ import Title from "../components/Title";
 export default function StreetPage() {
   return (
     <section className='bg-background text-foreground'>
-      <Title text='Urban and Street Photography' />
+      <Title text='Street Photography' isGallery />
       <Gallery term='street' />
     </section>
   );

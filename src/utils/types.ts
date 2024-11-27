@@ -1,6 +1,14 @@
+import { IconType } from "react-icons";
+
 export type NavLink = {
   href: string;
   label: string;
+};
+
+export type SocialLink = {
+  href: string;
+  siteName: string;
+  icon: IconType;
 };
 
 export type FetchedImageProps = {

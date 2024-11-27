@@ -6,6 +6,7 @@ const env = cleanEnv(process.env, {
   OUTDOOR_GALLERY_ID: str(),
   STREET_GALLERY_ID: str(),
   BUSAN_GALLERY_ID: str(),
+  PROFILE_IMG_ID: str(),
 });
 
 export default env;
