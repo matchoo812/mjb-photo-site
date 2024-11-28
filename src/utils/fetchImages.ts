@@ -1,20 +1,6 @@
 import env from "@/utils/env";
 import { BasicPhoto, PhotoWithInfo } from "./types";
 
-// export async function fetchImageList(url: string): Promise<BasicPhoto[]> {
-//   try {
-//     const res = await fetch(url);
-//     if (!res.ok) throw new Error("There was a problem fetching the image list");
-
-//     const imageResults = await res.json();
-//     const imageList: BasicPhoto[] = imageResults.photoset.photo;
-
-//     return imageList;
-//   } catch (err) {
-//     if (err instanceof Error) console.log(err.stack);
-//   }
-// }
-
 export async function fetchImageInfo(photo: BasicPhoto): Promise<PhotoWithInfo> {
   try {
     const res = await fetch(
@@ -57,7 +43,7 @@ export async function fetchImageList(url: string): Promise<PhotoWithInfo[]> {
   }
 }
 
-export async function fetchProfileImage(id: string) {
+export async function fetchBackgroundImage(id: string, sizeIndex: number) {
   try {
     const res = await fetch(
       `https://www.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=${env.FLICKR_API_KEY}&photo_id=${id}&format=json&nojsoncallback=1`
@@ -65,8 +51,7 @@ export async function fetchProfileImage(id: string) {
     if (!res.ok) throw new Error("There was a problem fetching image sizes");
 
     const imageSizes = await res.json();
-    const profileImage = imageSizes.sizes.size[6];
-    return profileImage;
+    return imageSizes.sizes.size[sizeIndex];
   } catch (err) {
     if (err instanceof Error) console.log(err.stack);
   }

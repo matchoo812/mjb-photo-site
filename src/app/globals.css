@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --overlay: hsla(0, 0%, 50%, 0.5);
+  --overlay: hsla(0, 0%, 60%, 0.6);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14,6 +14,13 @@
 
 body {
   font-family: var(--font-oswald);
+}
+
+h1,
+h2,
+h3,
+p {
+  user-select: none;
 }
 
 p {
@@ -27,10 +34,10 @@ p {
   }
 
   .glow {
-    box-shadow: 1px 2px 6px #00bbbb, 1px 2px 20px #00bbbb;
+    box-shadow: 1px 2px 6px #00cccc, 1px 2px 20px #00bbbb;
   }
   .text-glow {
-    text-shadow: 0px 1px 4px #00bbbb, 0px 1px 12px #00bbbb;
+    text-shadow: 0px 1px 4px #00cccc, 0px 1px 12px #00bbbb;
   }
 
   .glow-pink {
@@ -41,10 +48,10 @@ p {
   }
 
   .glow-yellow {
-    box-shadow: 1px 2px 6px #efeca9, 1px 2px 20px #efeca9;
+    box-shadow: 1px 2px 6px #efeca9, 1px 2px 20px #dfdc99;
   }
   .text-glow-yellow {
-    text-shadow: 0px 1px 4px #efeca9, 0px 1px 12px #efeca9;
+    text-shadow: 0px 1px 4px #efeca9, 0px 1px 12px #dfdc99;
   }
 
   .font-lora {
@@ -57,6 +64,13 @@ p {
 
   .border-overlay {
     border-color: var(--overlay);
+  }
+
+  .text-border-foreground {
+    drop-shadow: 1px 1px 2px var(--foreground);
+  }
+  .text-border-background {
+    drop-shadow: 1px 1px 2px var(--background);
   }
 }
 
@@ -107,7 +121,7 @@ p {
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 0 0% 98%;
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 3.9%;

@@ -1,6 +1,12 @@
 import { NavLink, SocialLink } from "./types";
-import { TfiInstagram, TfiFacebook } from "react-icons/tfi";
-import { Si500Px, SiGithub } from "react-icons/si";
+import { TfiInstagram, TfiFacebook, TfiFlickr } from "react-icons/tfi";
+import {
+  Si500Px,
+  SiGithub,
+  SiNextdotjs,
+  SiTypescript,
+  SiTailwindcss,
+} from "react-icons/si";
 
 export const navLinks: NavLink[] = [
   { href: "/outdoors ", label: "outdoors" },
@@ -27,4 +33,19 @@ export const footerLinks: SocialLink[] = [
   ...socialLinks,
   { href: "https://500px.com/p/mattjballard", siteName: "500px", icon: Si500Px },
   { href: "https://github.com/matchoo812", siteName: "github", icon: SiGithub },
+];
+
+export const techLinks: SocialLink[] = [
+  { href: "https://nextjs.org", siteName: "NextJS", icon: SiNextdotjs },
+  {
+    href: "https://www.typescriptlang.org",
+    siteName: "TypeScript",
+    icon: SiTypescript,
+  },
+  { href: "https://tailwindcss.com", siteName: "TailwindCSS", icon: SiTailwindcss },
+  {
+    href: "https://www.flickr.com/services/api",
+    siteName: "Flickr API",
+    icon: TfiFlickr,
+  },
 ];

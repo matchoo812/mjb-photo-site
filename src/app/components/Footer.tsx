@@ -5,7 +5,11 @@ function Footer() {
     <footer className='w-full h-max pt-6 border-t-2 mt-5 border-t-overlay border-b-[20px] backdrop-blur-sm border-b-foreground dark:glow'>
       <ul className='flex justify-center items-center group w-max mx-auto'>
         {footerLinks.map((link, index) => (
-          <a href={link.href} key={index} className='mx-2 my-auto group-hover-link'>
+          <a
+            href={link.href}
+            key={index}
+            target='_blank'
+            className='mx-2 my-auto group-hover-link'>
             <link.icon className='social-link hover-glow-link' />
           </a>
         ))}
