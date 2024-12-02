@@ -27,7 +27,7 @@ const ImageSlide = ({
           height={height}
           width={width}
           alt={title}
-          className='max-h-[90vh] w-auto max-w-[90vw] p-5 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 backdrop-blur-sm border-overlay border-2 shadow-xl object-cover dark:glow'
+          className='max-h-[90vh] w-auto max-w-[90vw] p-5 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 backdrop-blur-sm border-overlay border-3 shadow-xl object-cover dark:glow'
         />
         <TextCursor text={title} />
       </div>

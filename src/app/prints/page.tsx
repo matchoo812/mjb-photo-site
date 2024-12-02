@@ -5,7 +5,7 @@ function PrintsPage() {
     <div className='max-w-3xl mx-auto p-7 bg-foreground border border-overlay shadow-lg dark:bg-background dark:border-none'>
       <div className='p-8 pt-6 bg-background border-2 border-overlay dark:border-none dark:glow'>
         <Title text='Where to buy prints' />
-        <p className='text-center mt-5'>
+        <p className='mt-6 mb-2 mx-auto max-w-md'>
           If you&apos;d like to support my work, prints of a selection of my photos
           can be purchased at{" "}
           <a
@@ -15,13 +15,13 @@ function PrintsPage() {
           </a>{" "}
           here:
         </p>
-        <div className='flex justify-center my-6 backdrop-blur-sm'>
+        <div className='flex justify-center my-7 backdrop-blur-sm'>
           <a href='https://mattjballard.darkroom.com/'>
             <svg
               viewBox='0 0 16 16'
               fill='none'
               xmlns='http://www.w3.org/2000/svg'
-              className='h-20 w-20 p-3 rounded-lg shadow-md hover:scale-110 hover-glow-link border border-background'>
+              className='h-20 w-20 p-3 rounded-lg shadow-md hover:scale-105 hover-glow-link border border-background'>
               <path
                 fill-rule='evenodd'
                 clip-rule='evenodd'
@@ -40,10 +40,10 @@ function PrintsPage() {
             </svg>
           </a>
         </div>
-        <p className='text-center'>
+        <p className='max-w-md mx-auto mt-5 mb-2'>
           If you see an image on this site that is not available for print that
-          you&apos;d like to order, feel free to reach out on social media and I may
-          be able to make it so.
+          you&apos;d like to order, feel free to reach out on social media and I can
+          make it so.
         </p>
       </div>
     </div>

@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --overlay: hsla(0, 0%, 60%, 0.6);
+  --overlay: hsla(0, 0%, 70%, 0.7);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --overlay: hsla(0, 0%, 0%, 0.3);
+    --overlay: hsla(0, 0%, 0%, 0.6);
   }
 }
 
@@ -75,19 +75,39 @@ p {
 }
 
 @layer components {
-  .underline-animation {
+  .nav-link {
     @apply relative;
   }
-  .underline-animation::after {
-    @apply absolute left-0 bottom-0 content-[''] w-full h-[3px] rounded-sm bg-foreground scale-x-0 hover:-scale-x-50 transition-transform duration-300;
+  .nav-link::after {
+    @apply absolute left-0 bottom-0 content-[''] w-full h-[3px] rounded-sm bg-foreground scale-x-0 hover:scale-x-50 transition-transform duration-300;
+  }
+  .nav-link.active {
+    @apply drop-shadow-lg dark:drop-shadow-glowYellow;
+  }
+  .nav-link.active::after {
+    @apply scale-x-50;
+  }
+
+  .hover-glow-link {
+    @apply hover:drop-shadow-md dark:drop-shadow-glow dark:hover:drop-shadow-glowYellow duration-500;
   }
 
   .group-hover-link {
     @apply group-hover:opacity-50 hover:!opacity-100 transition-opacity duration-200;
   }
 
+  .social-link {
+    @apply h-[1.6rem] w-[1.6rem] hover:-translate-y-[2px];
+  }
+
   .slider-btn {
-    @apply h-full duration-300 z-20 hover:shadow-lg focus-visible:shadow-lg hover:backdrop-blur-sm focus-visible:backdrop-blur-sm focus:outline-none;
+    @apply duration-500 z-20 p-5 hover:backdrop-blur-sm active:outline-none focus:outline-none focus-visible:backdrop-blur-sm focus-visible:drop-shadow-glowYellow;
+  }
+  .slider-btn > svg {
+    @apply h-10 w-10 p-2 border border-overlay bg-overlay backdrop-blur-sm rounded drop-shadow-sm active:border-foreground duration-500;
+  }
+  .slider-btn:hover > svg {
+    @apply scale-110 drop-shadow-lg dark:drop-shadow-glowYellow;
   }
 
   .slider-modal-bg {
@@ -108,14 +128,6 @@ p {
 
   .expand-img-btn > svg {
     @apply h-full w-full p-10 scale-0 fill-background group-hover:scale-100 duration-500 drop-shadow-glowYellow dark:drop-shadow-glow;
-  }
-
-  .hover-glow-link {
-    @apply hover:drop-shadow-md dark:drop-shadow-glow dark:hover:drop-shadow-glowYellow duration-200;
-  }
-
-  .social-link {
-    @apply h-[1.6rem] w-[1.6rem] hover:-translate-y-[2px];
   }
 }
 

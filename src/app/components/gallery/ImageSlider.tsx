@@ -30,8 +30,8 @@ export default function ImageSlider({
   return (
     <>
       <div className='absolute top-0 left-0 flex flex-nowrap h-screen w-screen justify-between align-center overflow-hidden'>
-        <button onClick={() => showPrevImage()} className='slider-btn pl-6 pr-5'>
-          <TfiAngleLeft className='h-8 w-8' />
+        <button onClick={() => showPrevImage()} className='slider-btn'>
+          <TfiAngleLeft />
         </button>
 
         {imageList.map((img, index) => {
@@ -49,8 +49,8 @@ export default function ImageSlider({
           );
         })}
 
-        <button onClick={() => showNextImage()} className='slider-btn pr-6 pl-5'>
-          <TfiAngleRight className='h-8 w-8' />
+        <button onClick={() => showNextImage()} className='slider-btn'>
+          <TfiAngleRight />
         </button>
       </div>
     </>

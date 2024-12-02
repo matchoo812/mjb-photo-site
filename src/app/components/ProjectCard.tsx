@@ -18,11 +18,11 @@ function ProjectCard({
           maxWidth: width,
           maxHeight: height,
         }}
-        className='mt-3 h-[30vh] w-[50vw] rounded-sm border-2 border-overlay dark:border-foreground shadow-md object-contain bg-center bg-no-repeat dark:glow-yellow'>
+        className='mt-3 p-2 w-[55vw] min-w-min min-h-max rounded-sm border-2 border-overlay dark:border-foreground shadow-md object-contain bg-center bg-no-repeat dark:glow-yellow'>
         <div className='h-full p-6 flex flex-col justify-between'>
-          <div className='text-background dark:text-foreground bg-overlay backdrop-blur-sm shadow-md rounded-sm'>
-            <h3 className='p-2 text-xl w-max'>{title}</h3>
-            <p className='mt-1 p-2'>{description}</p>
+          <div className='min-w-min p-3 mb-3 text-background dark:text-foreground bg-overlay backdrop-blur-sm shadow-md rounded-sm'>
+            <h3 className='p-1 text-xl w-max'>{title}</h3>
+            <p className='mt-1 p-1'>{description}</p>
           </div>
           <Link
             href='/projects/busan'
