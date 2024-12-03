@@ -2,13 +2,9 @@
 
 import { useState } from "react";
 import { PhotoWithInfo } from "@/utils/types";
-// import ImageContainer from "./ImageContainer";
-// import ImageSlider from "./ImageSlider";
 import ImageSliderModal from "./ImageSliderModal";
 import ImageSlider from "./ImageSlider";
-// import ImageContainer from "./ImageContainer";
 import Image from "next/image";
-import { RiFullscreenLine } from "react-icons/ri";
 import { GiExpand } from "react-icons/gi";
 
 export default function GalleryWrapper({
@@ -20,14 +16,19 @@ export default function GalleryWrapper({
   const [activeIndex, setActiveIndex] = useState(0);
 
   function openImageSlider(index) {
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-    document.body.classList.add("overflow-hidden");
     setActiveIndex(index);
     setShow(true);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+    document.body.classList.add("overflow-hidden");
   }
 
   function closeImageSlider() {
     setShow(false);
+    // galleryCoverImage?.classList.remove("h-0");
     document.body.classList.remove("overflow-hidden");
   }
 
@@ -40,24 +41,26 @@ export default function GalleryWrapper({
           setActiveIndex={setActiveIndex}
         />
       </ImageSliderModal>
-      {imageList.map((image, index) => {
-        const { id, src, title, height, width } = image;
-        return (
-          <div
-            key={id}
-            className='justify-self-center cursor-pointer'
-            onClick={() => openImageSlider(index)}>
-            <div className='grid place-content-center'>
-              <figure className='relative bg-slate-50 border border-slate-300 shadow-md mt-2 group'>
-                <Image src={src} alt={title} height={height} width={width} />
-                <button data-index={index} className='expand-img-btn'>
-                  <GiExpand />
-                </button>
-              </figure>
+      <div className='mt-[75vh] p-6 columns-1 sm:columns-2 md:columns-3 lg:columns-4 2xl:columns-5 gap-2 bg-overlay border-2 border-overlay backdrop-blur-sm'>
+        {imageList.map((image, index) => {
+          const { id, src, title, height, width } = image;
+          return (
+            <div
+              key={id}
+              className='justify-self-center cursor-pointer'
+              onClick={() => openImageSlider(index)}>
+              <div className='grid place-content-center'>
+                <figure className='relative bg-slate-50 border border-slate-300 shadow-md mt-2 group'>
+                  <Image src={src} alt={title} height={height} width={width} />
+                  <button data-index={index} className='expand-img-btn'>
+                    <GiExpand />
+                  </button>
+                </figure>
+              </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </>
   );
 }

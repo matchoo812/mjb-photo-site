@@ -2,15 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --overlay: hsla(0, 0%, 70%, 0.7);
+/* :root {
+  --overlay: hsla(0, 0%, 75%, 0.7);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --overlay: hsla(0, 0%, 0%, 0.6);
   }
-}
+} */
 
 body {
   font-family: var(--font-oswald);
@@ -67,10 +67,10 @@ p {
   }
 
   .text-border-foreground {
-    drop-shadow: 1px 1px 2px var(--foreground);
+    drop-shadow: 0px 0px 3px var(--foreground);
   }
   .text-border-background {
-    drop-shadow: 1px 1px 2px var(--background);
+    drop-shadow: 0px 0px 3px var(--background);
   }
 }
 
@@ -79,17 +79,17 @@ p {
     @apply relative;
   }
   .nav-link::after {
-    @apply absolute left-0 bottom-0 content-[''] w-full h-[3px] rounded-sm bg-foreground scale-x-0 hover:scale-x-50 transition-transform duration-300;
+    @apply absolute left-0 bottom-[5px] content-[''] w-full h-[3px] rounded-sm bg-foreground scale-x-0 hover:scale-x-50 transition-transform duration-300;
   }
   .nav-link.active {
-    @apply drop-shadow-lg dark:drop-shadow-glowYellow;
+    @apply dark:drop-shadow-glowYellow;
   }
   .nav-link.active::after {
     @apply scale-x-50;
   }
 
   .hover-glow-link {
-    @apply hover:drop-shadow-md dark:drop-shadow-glow dark:hover:drop-shadow-glowYellow duration-500;
+    @apply hover:drop-shadow-light dark:drop-shadow-glow dark:hover:drop-shadow-glowYellow duration-500;
   }
 
   .group-hover-link {
@@ -97,21 +97,18 @@ p {
   }
 
   .social-link {
-    @apply h-[1.6rem] w-[1.6rem] hover:-translate-y-[2px];
+    @apply h-[1.6rem] w-[1.6rem] drop-shadow-light hover:-translate-y-[2px];
   }
 
   .slider-btn {
-    @apply duration-500 z-20 p-5 hover:backdrop-blur-sm active:outline-none focus:outline-none focus-visible:backdrop-blur-sm focus-visible:drop-shadow-glowYellow;
+    @apply duration-500 z-50 p-4 active:outline-none focus:outline-none focus-visible:backdrop-blur-sm focus-visible:drop-shadow-glowYellow;
   }
   .slider-btn > svg {
-    @apply h-10 w-10 p-2 border border-overlay bg-overlay backdrop-blur-sm rounded drop-shadow-sm active:border-foreground duration-500;
-  }
-  .slider-btn:hover > svg {
-    @apply scale-110 drop-shadow-lg dark:drop-shadow-glowYellow;
+    @apply h-10 w-10 p-2 border border-overlay bg-overlay backdrop-blur-sm rounded drop-shadow-sm active:border-foreground duration-500 hover:scale-110 hover:drop-shadow-lg dark:hover:drop-shadow-glowYellow;
   }
 
   .slider-modal-bg {
-    @apply fixed top-0 left-0 w-screen h-screen bg-overlay mx-auto z-10 overflow-hidden duration-300;
+    @apply fixed top-0 left-0 w-screen h-screen bg-overlay backdrop-blur-md mx-auto z-10 overflow-hidden duration-300;
   }
 
   .image-slide {
@@ -137,6 +134,7 @@ p {
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 3.9%;
+    --overlay: hsla(0, 0%, 90%, 0.4);
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
     --primary: 0 0% 9%;
@@ -164,6 +162,7 @@ p {
     --foreground: 0 0% 98%;
     --card: 0 0% 3.9%;
     --card-foreground: 0 0% 98%;
+    --overlay: hsla(0, 0%, 0%, 0.5);
     --popover: 0 0% 3.9%;
     --popover-foreground: 0 0% 98%;
     --primary: 0 0% 98%;

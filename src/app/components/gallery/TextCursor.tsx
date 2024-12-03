@@ -16,7 +16,7 @@ function TextCursor({ text }: { text: string }) {
 
   return (
     <div
-      className='absolute pointer-events-none text-lg w-max h-max p-1 rounded backdrop-blur-sm z-40'
+      className='absolute pointer-events-none text-lg w-max h-max p-1 rounded backdrop-blur-sm z-50'
       style={{ left: position.left, top: position.top }}>
       {text}
     </div>

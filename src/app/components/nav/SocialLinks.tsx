@@ -2,7 +2,7 @@ import { socialLinks } from "@/utils/links";
 
 function SocialLinks() {
   return (
-    <div className='flex items-center justify-center group mr-4'>
+    <div className='flex items-center justify-center group p-1 mr-4'>
       {socialLinks.map((link, index) => (
         <a
           key={index}

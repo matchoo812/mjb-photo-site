@@ -2,9 +2,6 @@ import env from "@/utils/env";
 import Link from "next/link";
 import { techLinks } from "@/utils/links";
 import { fetchBackgroundImage } from "@/utils/fetchImages";
-import { SiNextdotjs, SiGithub, SiTypescript, SiTailwindcss } from "react-icons/si";
-import { TfiFlickr } from "react-icons/tfi";
-// import Image from "next/image";
 
 async function AboutPage() {
   const profileImage: { width: number; height: number; source: string } =

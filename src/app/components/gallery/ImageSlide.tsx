@@ -7,19 +7,17 @@ const ImageSlide = ({
   width,
   title,
   active,
-  activeIndex,
 }: {
   src: string;
   height: number;
   width: number;
   title: string;
   active: boolean;
-  activeIndex: number;
 }) => {
   return (
-    <div className='image-slide'>
+    <div className='image-slide z-40'>
       <div
-        className={`h-[90vw] m-auto z-20 duration-200 cursor-none ${
+        className={`h-[90vw] m-auto duration-200 cursor-none ${
           active ? "opacity-100" : "opacity-0"
         }`}>
         <Image
@@ -27,7 +25,7 @@ const ImageSlide = ({
           height={height}
           width={width}
           alt={title}
-          className='max-h-[90vh] w-auto max-w-[90vw] p-5 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 backdrop-blur-sm border-overlay border-3 shadow-xl object-cover dark:glow'
+          className='max-h-[95vh] w-auto max-w-[90vw] p-5 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-overlay backdrop-blur-md border-overlay border-4 shadow-xl object-cover dark:glow'
         />
         <TextCursor text={title} />
       </div>

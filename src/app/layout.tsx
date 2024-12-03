@@ -29,17 +29,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${lora.variable} ${oswald.variable} antialiased`}>
+      <body
+        className={`${lora.variable} ${oswald.variable} antialiased bg-background`}>
         <ThemeProvider
           attribute='class'
           defaultTheme='system'
           enableSystem
           disableTransitionOnChange>
-          <div className='flex flex-col justify-between min-h-screen'>
+          <div className='flex flex-col justify-between items-center min-h-screen bg-transparent'>
             <Navbar />
-            <main className='w-11/12 max-w-[1500px] mx-auto pt-3 pb-10'>
-              {children}
-            </main>
+            <main className='mx-auto pb-10 bg-transparent'>{children}</main>
             <Footer />
           </div>
         </ThemeProvider>
