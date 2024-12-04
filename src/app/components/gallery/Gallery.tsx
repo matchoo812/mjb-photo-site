@@ -1,5 +1,6 @@
 import env from "@/utils/env";
 import { fetchImageList } from "@/utils/fetchImages";
+import GalleryCoverImage from "./GalleryCoverImage";
 import GalleryWrapper from "./GalleryWrapper";
 
 async function Gallery({ term = "featured" }: { term?: string }) {
@@ -34,15 +35,8 @@ async function Gallery({ term = "featured" }: { term?: string }) {
   return (
     // TODO: Add loading state
     <>
-      <div
-        className='gallery-cover absolute top-0 left-0 h-screen w-full max-w-screen overflow-hidden bg-fixed bg-cover bg-center bg-no-repeat shadow-lg duration-200'
-        style={{
-          backgroundImage: `url(${galleryImageUrl})`,
-        }}></div>
-      <section
-        // w-11/12 max-w-[1500px] mt-[70vh]
-        className='m-5'
-        id='gallery'>
+      <GalleryCoverImage imageUrl={galleryImageUrl} />
+      <section className='m-5' id='gallery'>
         <GalleryWrapper imageList={imageList} />
       </section>
     </>

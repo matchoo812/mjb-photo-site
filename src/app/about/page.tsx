@@ -19,8 +19,9 @@ async function AboutPage() {
           About Me
         </h2>
         <p>
-          I&apos;m Matt, a freelance photographer and self-taught web developer. Most
-          of what I do is outdoors and street photography.
+          I&apos;m Matt, a freelance photographer and web developer. Available for
+          hire on both counts. Most of the photography I do is outdoors, travel, and
+          street photography.
         </p>
         <br />
         <hr />

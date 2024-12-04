@@ -41,7 +41,7 @@ export default function GalleryWrapper({
           setActiveIndex={setActiveIndex}
         />
       </ImageSliderModal>
-      <div className='mt-[75vh] p-6 columns-1 sm:columns-2 md:columns-3 lg:columns-4 2xl:columns-5 gap-2 bg-overlay border-2 border-overlay backdrop-blur-sm'>
+      <div className='mt-[80vh] p-6 columns-1 sm:columns-2 md:columns-3 lg:columns-4 2xl:columns-5 gap-2 bg-overlay border-2 border-overlay backdrop-blur-sm'>
         {imageList.map((image, index) => {
           const { id, src, title, height, width } = image;
           return (
@@ -50,7 +50,7 @@ export default function GalleryWrapper({
               className='justify-self-center cursor-pointer'
               onClick={() => openImageSlider(index)}>
               <div className='grid place-content-center'>
-                <figure className='relative bg-slate-50 border border-slate-300 shadow-md mt-2 group'>
+                <figure className='relative bg-overlay border border-slate-300 shadow-md mt-2 group'>
                   <Image src={src} alt={title} height={height} width={width} />
                   <button data-index={index} className='expand-img-btn'>
                     <GiExpand />

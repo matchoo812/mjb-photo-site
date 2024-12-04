@@ -59,8 +59,8 @@ const config: Config = {
       dropShadow: {
         glow: ["0px 1px 4px #00bbbb", "0px 1px 12px #00bbbb"],
         glowYellow: ["0px 1px 4px #efeca9", "0px 1px 12px #efeca9"],
-        light: ["0px 0px 2px hsl(0 0% 98%)", "0px 1px 8px hsl(0 0% 98%)"],
-        dark: ["0px 0px 2px hsl(0 0% 3.9%)", "0px 1px 8px hsl(0 0% 3.9%)"],
+        light: ["0px 0px 3px hsl(0 0% 92%)", "0px 1px 10px hsl(0 0% 85%)"],
+        dark: ["0px 0px 3px hsl(0 0% 3.9%)", "0px 1px 10px hsl(0 0% 3.9%)"],
       },
     },
     gridTemplateColumns: {
