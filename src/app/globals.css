@@ -83,7 +83,7 @@ p {
     @apply absolute left-0 bottom-[5px] content-[''] w-full h-[3px] rounded-sm bg-foreground scale-x-0 hover:scale-x-50 transition-transform duration-300;
   }
   .nav-link.active {
-    @apply dark:drop-shadow-glowYellow;
+    @apply drop-shadow-light dark:drop-shadow-glowYellow;
   }
   .nav-link.active::after {
     @apply scale-x-50;
@@ -104,7 +104,7 @@ p {
   /* ====================== Gallery ========================= */
 
   .gallery-cover {
-    @apply absolute top-0 left-0 h-screen w-screen bg-fixed bg-cover bg-center bg-no-repeat shadow-lg duration-200 scroll-smooth;
+    @apply absolute top-0 left-0 h-screen w-screen bg-fixed bg-cover bg-center bg-no-repeat shadow-lg scroll-smooth;
   }
 
   .expand-img-btn {
@@ -118,7 +118,7 @@ p {
   /* ====================== Image Slider ========================= */
 
   .slider-btn {
-    @apply duration-500 z-50 p-4 active:outline-none focus:outline-none focus-visible:backdrop-blur-sm focus-visible:drop-shadow-glowYellow;
+    @apply duration-500 z-50 w-1/4 p-4 outline-none focus-visible:backdrop-blur-sm;
   }
   /* border border-overlay backdrop-blur-sm rounded */
   .slider-btn > svg {
@@ -130,7 +130,7 @@ p {
   }
 
   .image-slide {
-    @apply absolute h-screen w-full object-contain;
+    @apply h-screen w-full object-contain;
   }
 
   .image-slide img {

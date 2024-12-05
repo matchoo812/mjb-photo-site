@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`${lora.variable} ${oswald.variable} antialiased bg-background`}>
+        className={`${lora.variable} ${oswald.variable} antialiased bg-background overflow-x-hidden`}>
         <ThemeProvider
           attribute='class'
           defaultTheme='system'

@@ -10,7 +10,7 @@ function NavLinks() {
   const pathSegment = path.split("/")[1];
 
   return (
-    <div className='flex items-center justify-center bg-overlay border-2 border-foreground dark:border-none group'>
+    <div className='hidden lg:flex items-center justify-center dark:border-none group'>
       {navLinks.map((link) => {
         const { href, label } = link;
         return (

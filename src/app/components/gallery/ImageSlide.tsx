@@ -17,7 +17,7 @@ const ImageSlide = ({
   return (
     <div className='image-slide z-40'>
       <div
-        className={`h-[90vw] m-auto duration-200 cursor-none ${
+        className={`h-[90vw] m-auto duration-200 ${
           active ? "opacity-100" : "opacity-0"
         }`}>
         <Image

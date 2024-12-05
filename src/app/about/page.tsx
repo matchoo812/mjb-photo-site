@@ -46,7 +46,7 @@ async function AboutPage() {
               key={link.siteName}
               href={link.href}
               target='_blank'
-              className='mr-2 text-cyan-700 dark:text-foreground drop-shadow-sm text-border-foreground hover-glow-link hover:scale-105'>
+              className='mr-2 text-cyan-700 dark:text-foreground text-border-foreground hover:scale-110 hover-glow-link duration-150'>
               <link.icon className='h-8 w-8 p-1 inline-block' /> | {link.siteName}
             </a>
           ))}

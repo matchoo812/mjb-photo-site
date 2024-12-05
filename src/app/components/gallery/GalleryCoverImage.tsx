@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 function GalleryCoverImage({ imageUrl }: { imageUrl: string }) {
   const [offsetY, setOffsetY] = useState(0);
@@ -19,7 +19,7 @@ function GalleryCoverImage({ imageUrl }: { imageUrl: string }) {
       className='gallery-cover'
       style={{
         backgroundImage: `url(${imageUrl})`,
-        backgroundPositionY: offsetY * -0.1 + "px",
+        backgroundPositionY: offsetY * -0.4 + "px",
         scrollBehavior: "smooth",
       }}></div>
   );

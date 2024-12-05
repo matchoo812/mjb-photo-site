@@ -28,7 +28,6 @@ export default function GalleryWrapper({
 
   function closeImageSlider() {
     setShow(false);
-    // galleryCoverImage?.classList.remove("h-0");
     document.body.classList.remove("overflow-hidden");
   }
 
@@ -39,9 +38,10 @@ export default function GalleryWrapper({
           imageList={imageList}
           activeIndex={activeIndex}
           setActiveIndex={setActiveIndex}
+          closeImageSlider={closeImageSlider}
         />
       </ImageSliderModal>
-      <div className='mt-[80vh] p-6 columns-1 sm:columns-2 md:columns-3 lg:columns-4 2xl:columns-5 gap-2 bg-overlay border-2 border-overlay backdrop-blur-sm'>
+      <div className='mt-[80vh] max-w-[1650px] p-6 columns-1 sm:columns-2 md:columns-3 lg:columns-4 2xl:columns-5 gap-2 bg-overlay border-2 border-overlay backdrop-blur-sm'>
         {imageList.map((image, index) => {
           const { id, src, title, height, width } = image;
           return (
