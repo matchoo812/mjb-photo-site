@@ -2,7 +2,7 @@ import { footerLinks } from "@/utils/links";
 
 function Footer() {
   return (
-    <footer className='w-full h-max pt-6 mt-5 backdrop-blur-sm bg-overlay shadow-xl border-b-[25px] border-b-foreground dark:glow z-30'>
+    <footer className='w-full h-max pt-6 mt-5 backdrop-blur-sm bg-overlay shadow-xl border-b-[25px] border-b-foreground dark:glow z-25'>
       <ul className='flex justify-center items-center group w-max mx-auto'>
         {footerLinks.map((link, index) => (
           <a

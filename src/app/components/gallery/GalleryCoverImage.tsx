@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 function GalleryCoverImage({ imageUrl }: { imageUrl: string }) {
   const [offsetY, setOffsetY] = useState(0);

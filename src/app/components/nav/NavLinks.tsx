@@ -4,13 +4,16 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { navLinks } from "@/utils/links";
 
-function NavLinks() {
+function NavLinks({ clicked }: { clicked: boolean }) {
   const path = usePathname();
-  // console.log(path);
   const pathSegment = path.split("/")[1];
 
   return (
-    <div className='hidden lg:flex items-center justify-center dark:border-none group'>
+    // hidden lg:flex
+    <div
+      className={`flex flex-col z-30 group h-[90vh] items-center justify-center absolute top-full w-1/2 bg-background backdrop-blur-md lg:flex-row lg:h-max lg:static lg:bg-transparent lg:backdrop-blur-none dark:border-none duration-500 ${
+        clicked ? "right-0" : "-right-1/2"
+      }`}>
       {navLinks.map((link) => {
         const { href, label } = link;
         return (
