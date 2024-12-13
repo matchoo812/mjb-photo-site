@@ -2,8 +2,8 @@ import Title from "../components/Title";
 
 function PrintsPage() {
   return (
-    <div className='max-w-3xl mx-auto p-7 bg-foreground border border-overlay shadow-lg dark:bg-background dark:border-none'>
-      <div className='p-8 pt-6 bg-background border-2 border-overlay dark:border-none dark:glow'>
+    <div className='w-3xl max-w-[90vw] p-7 mt-11 bg-foreground border-2 border-overlay drop-shadow-dark dark:bg-background dark:drop-shadow-glow'>
+      <div className='p-8 pt-6 mx-auto bg-background border-2 border-overlay'>
         <Title text='Where to buy prints' />
         <p className='mt-6 mb-2 mx-auto max-w-md'>
           If you&apos;d like to support my work, prints of a selection of my photos

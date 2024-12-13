@@ -34,12 +34,12 @@ async function Gallery({ term = "featured" }: { term?: string }) {
 
   return (
     // TODO: Add loading state
-    <>
+    <div className='overflow-x-hidden z-20'>
       <GalleryCoverImage imageUrl={galleryImageUrl} />
       <section className='m-5' id='gallery'>
         <GalleryWrapper imageList={imageList} />
       </section>
-    </>
+    </div>
   );
 }
 export default Gallery;

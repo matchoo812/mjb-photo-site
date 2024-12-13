@@ -1,9 +1,9 @@
 "use client";
 
-function MobileMenuTrigger({ clicked, setClicked }: { clicked: boolean }) {
+function MobileMenuTrigger({ clicked, toggleMobileMenu }: { clicked: boolean }) {
   return (
     <button
-      onClick={() => setClicked(!clicked)}
+      onClick={toggleMobileMenu}
       className='flex flex-col z-20 justify-around w-10 h-10 p-1 fixed top-[1.7rem] right-7 cursor-pointer lg:hidden hover:drop-shadow-light dark:drop-shadow-glow dark:hover:drop-shadow-glowYellow duration-500'>
       <div
         className={`line ${

@@ -15,7 +15,7 @@ const ImageSlide = ({
   active: boolean;
 }) => {
   return (
-    <div className='image-slide z-40'>
+    <div className='image-slide'>
       <div
         className={`h-[90vw] m-auto duration-200 ${
           active ? "opacity-100" : "opacity-0"

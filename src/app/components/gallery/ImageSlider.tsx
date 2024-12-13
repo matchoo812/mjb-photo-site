@@ -31,7 +31,7 @@ export default function ImageSlider({
 
   return (
     <>
-      <div className='absolute top-0 left-0 flex flex-nowrap h-screen w-screen justify-between align-center overflow-hidden z-40'>
+      <div className='absolute top-0 left-0 flex flex-nowrap h-screen w-screen justify-between align-center overflow-hidden z-30'>
         <button
           onClick={() => showPrevImage()}
           className='slider-btn cursor-w-resize'>
