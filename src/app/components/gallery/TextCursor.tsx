@@ -6,7 +6,7 @@ function TextCursor({ text }: { text: string }) {
   const [position, setPosition] = useState({ left: 0, top: 0 });
 
   useEffect(() => {
-    const handleMouseMove = (e: Event) => {
+    const handleMouseMove = (e: MouseEvent) => {
       setPosition({ left: e.pageX, top: e.pageY });
     };
     window.addEventListener("mousemove", handleMouseMove);

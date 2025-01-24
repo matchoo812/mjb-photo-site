@@ -3,7 +3,7 @@ import { fetchImageList } from "@/utils/fetchImages";
 import GalleryCoverImage from "./GalleryCoverImage";
 import GalleryWrapper from "./GalleryWrapper";
 
-async function Gallery({ term = "featured" }: { term?: string }) {
+async function Gallery({ term = "featured" }: { term: string }) {
   let galleryId: string;
   let galleryImageId: string;
 
@@ -22,20 +22,20 @@ async function Gallery({ term = "featured" }: { term?: string }) {
   }
 
   const imgListUrl = `https://www.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=${env.FLICKR_API_KEY}&photoset_id=${galleryId}&extras=tags&format=json&nojsoncallback=1`;
-  const galleryImageUrl = `https://live.staticflickr.com/${env.SERVER_ID}/${galleryImageId}_k.jpg`;
+  const coverImageUrl = `https://live.staticflickr.com/${env.SERVER_ID}/${galleryImageId}_k.jpg`;
 
   let imageList = await fetchImageList(imgListUrl);
   if (!imageList) return <h2>There was a problem fetching the images</h2>;
 
   // filter list for featured photos
-  if (imageList && term === "featured") {
-    imageList = imageList.filter((img) => img.tags.toLowerCase().includes(term));
+  if (imageList.length > 0 && term === "featured") {
+    imageList = imageList.filter((img) => img.tags?.toLowerCase().includes(term));
   }
 
   return (
     // TODO: Add loading state
     <div className='overflow-x-hidden z-20'>
-      <GalleryCoverImage imageUrl={galleryImageUrl} />
+      <GalleryCoverImage imageUrl={coverImageUrl} />
       <section className='m-5' id='gallery'>
         <GalleryWrapper imageList={imageList} />
       </section>

@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from "react";
 import { IconType } from "react-icons";
 
 export type NavLink = {
@@ -29,6 +30,13 @@ export type PhotoWithInfo = {
   height: number;
   src: string;
   id: string;
-  title?: string;
+  title: string;
   tags?: string;
+};
+
+export type GalleryContextType = {
+  imageList: PhotoWithInfo[];
+  activeIndex: number;
+  setActiveIndex: Dispatch<SetStateAction<number>>;
+  closeImageSlider: () => void;
 };

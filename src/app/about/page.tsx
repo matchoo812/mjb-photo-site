@@ -1,11 +1,11 @@
 import env from "@/utils/env";
-import Link from "next/link";
+// import Link from "next/link";
 import { techLinks } from "@/utils/links";
 import { fetchBackgroundImage } from "@/utils/fetchImages";
 
 async function AboutPage() {
   const profileImage: { width: number; height: number; source: string } =
-    await fetchBackgroundImage(env.PROFILE_IMG_ID, 6);
+    await fetchBackgroundImage(env.PROFILE_IMG_ID, 5);
   const { width, height, source: src } = profileImage;
 
   return (

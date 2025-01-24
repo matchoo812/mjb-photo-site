@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { RxSun, RxMoon, RxDesktop } from "react-icons/rx";
+import { RxSun, RxMoon } from "react-icons/rx";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import {

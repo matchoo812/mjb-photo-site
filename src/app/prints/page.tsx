@@ -2,7 +2,7 @@ import Title from "../components/Title";
 
 function PrintsPage() {
   return (
-    <div className='w-3xl max-w-[90vw] p-7 mt-11 bg-foreground border-2 border-overlay drop-shadow-dark dark:bg-background dark:drop-shadow-glow'>
+    <div className='w-3xl max-w-[100vw] p-7 mt-11 bg-foreground drop-shadow-dark dark:bg-overlay dark:drop-shadow-glow'>
       <div className='p-8 pt-6 mx-auto bg-background border-2 border-overlay'>
         <Title text='Where to buy prints' />
         <p className='mt-6 mb-2 mx-auto max-w-md'>

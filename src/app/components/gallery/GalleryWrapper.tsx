@@ -1,11 +1,13 @@
 "use client";
 
-import { useState } from "react";
-import { PhotoWithInfo } from "@/utils/types";
+import { useEffect, useState, createContext, useContext } from "react";
+import { GalleryContextType, PhotoWithInfo } from "@/utils/types";
 import ImageSliderModal from "./ImageSliderModal";
 import ImageSlider from "./ImageSlider";
-import Image from "next/image";
-import { GiExpand } from "react-icons/gi";
+import ImageFrame from "./ImageFrame";
+
+export const GalleryContext = createContext<GalleryContextType | null>(null);
+export const useGalleryContext = () => useContext(GalleryContext);
 
 export default function GalleryWrapper({
   imageList,
@@ -14,9 +16,14 @@ export default function GalleryWrapper({
 }) {
   const [show, setShow] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
-  const navBar = document.querySelector("#header");
+  const [mounted, setMounted] = useState(false);
+  const navBar: Element | null = mounted ? document.querySelector("#header") : null;
 
-  function openImageSlider(index) {
+  useEffect(() => {
+    if (typeof document !== "undefined") setMounted(true);
+  }, []);
+
+  function openImageSlider(index: number) {
     setActiveIndex(index);
     setShow(true);
     navBar?.classList.remove("z-20");
@@ -26,46 +33,36 @@ export default function GalleryWrapper({
       left: 0,
       behavior: "smooth",
     });
-    document.body.classList.add("overflow-hidden");
+    if (mounted) document.body.classList.add("overflow-hidden");
   }
 
   function closeImageSlider() {
     setShow(false);
     navBar?.classList.remove("z-10");
     navBar?.classList.add("z-20");
-    document.body.classList.remove("overflow-hidden");
+    if (mounted) document.body.classList.remove("overflow-hidden");
   }
 
   return (
-    <div className='z-40'>
-      <ImageSliderModal show={show} closeImageSlider={closeImageSlider}>
-        <ImageSlider
-          imageList={imageList}
-          activeIndex={activeIndex}
-          setActiveIndex={setActiveIndex}
-          closeImageSlider={closeImageSlider}
-        />
-      </ImageSliderModal>
-      <div className='mt-[40vh] md:mt-[80vh] max-w-[1650px] p-6 columns-1 md:columns-2 lg:columns-3 xl:columns-4 2xl:columns-5 gap-2 bg-overlay border-2 border-overlay backdrop-blur-sm'>
-        {imageList.map((image, index) => {
-          const { id, src, title, height, width } = image;
-          return (
-            <div
-              key={id}
-              className='justify-self-center cursor-pointer'
-              onClick={() => openImageSlider(index)}>
-              <div className='grid place-content-center'>
-                <figure className='relative bg-overlay border border-slate-300 shadow-md mt-2 group'>
-                  <Image src={src} alt={title} height={height} width={width} />
-                  <button data-index={index} className='expand-img-btn'>
-                    <GiExpand />
-                  </button>
-                </figure>
-              </div>
-            </div>
-          );
-        })}
+    <GalleryContext.Provider
+      value={{ imageList, activeIndex, setActiveIndex, closeImageSlider }}>
+      <div className='z-40'>
+        <ImageSliderModal show={show} closeImageSlider={closeImageSlider}>
+          <ImageSlider />
+        </ImageSliderModal>
+        <div className='mt-[35vh] sm:mt-[40vh] md:mt-[80vh] max-w-[1650px] p-6 columns-1 md:columns-2 lg:columns-3 xl:columns-4 2xl:columns-5 gap-2 bg-overlay border-2 border-overlay backdrop-blur-sm'>
+          {imageList.map((image, index) => {
+            return (
+              <ImageFrame
+                key={image.id}
+                image={image}
+                index={index}
+                openImageSlider={openImageSlider}
+              />
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </GalleryContext.Provider>
   );
 }

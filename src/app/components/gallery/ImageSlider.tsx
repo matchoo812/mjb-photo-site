@@ -1,18 +1,12 @@
-import { PhotoWithInfo } from "@/utils/types";
 import { TfiAngleLeft, TfiAngleRight } from "react-icons/tfi";
 import ImageSlide from "./ImageSlide";
+import { useGalleryContext } from "./GalleryWrapper";
+import { GalleryContextType, PhotoWithInfo } from "@/utils/types";
 
-export default function ImageSlider({
-  imageList,
-  activeIndex,
-  setActiveIndex,
-  closeImageSlider,
-}: {
-  imageList: PhotoWithInfo[];
-  activeIndex: number;
-  setActiveIndex: () => void;
-  closeImageSlider: () => void;
-}) {
+export default function ImageSlider() {
+  const { imageList, activeIndex, setActiveIndex, closeImageSlider } =
+    useGalleryContext() as GalleryContextType;
+
   function showPrevImage() {
     if (activeIndex > 0) {
       setActiveIndex(activeIndex - 1);
@@ -39,7 +33,7 @@ export default function ImageSlider({
         </button>
 
         <div className='mx-auto cursor-n-resize' onClick={closeImageSlider}>
-          {imageList.map((img, index) => {
+          {imageList.map((img: PhotoWithInfo, index: number) => {
             const { id, src, height, width, title } = img;
             return (
               <ImageSlide
@@ -49,7 +43,6 @@ export default function ImageSlider({
                 width={width}
                 title={title}
                 active={index === activeIndex}
-                activeIndex={activeIndex}
               />
             );
           })}

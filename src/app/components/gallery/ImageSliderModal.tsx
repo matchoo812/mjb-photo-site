@@ -1,6 +1,14 @@
 import { TfiClose } from "react-icons/tfi";
 
-function ImageSliderModal({ children, show, closeImageSlider }) {
+function ImageSliderModal({
+  children,
+  show,
+  closeImageSlider,
+}: {
+  children: React.ReactNode;
+  show: boolean;
+  closeImageSlider: () => void;
+}) {
   return (
     show && (
       <div className='slider-modal-bg' id='image-slider-modal'>

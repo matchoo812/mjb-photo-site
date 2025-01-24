@@ -36,7 +36,7 @@ export default function RootLayout({
           defaultTheme='system'
           enableSystem
           disableTransitionOnChange>
-          <div className='flex flex-col justify-between items-center min-h-screen bg-transparent'>
+          <div className='flex flex-col justify-between items-center min-h-screen bg-transparent overflow-x-clip'>
             <Navbar />
             <main className='mx-auto pb-10 bg-transparent'>{children}</main>
             <Footer />
